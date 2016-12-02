@@ -88,7 +88,7 @@ totalIPs=0
 #Sets IP counter to 0
 p0f=P0f('/var/run/p0f.sock')
 #creats P0f object to handle API calls to background daemon which socket loc as parameter
-for i in range(curSubnet.network,curSubnet.network+10):
+for i in range(curSubnet.network+1,curSubnet.broadcast):
 #Counts total IPs between Network address and Broadcast Address
     totalIPs+=1
 for j in range(1,totalIPs+1):

@@ -39,6 +39,6 @@ Step 6: Complile p0f using the following commands: make
 Step 7: Move files to appropriate directories: cp p0f /usr/local/bin/
                                                cp p0f.fp /etc/
                                                cp tools/p0f-client /usr/local/bin/
-Step 8: Download p0f API library https://pypi.python.org/pypi/p0f/1.0.0 or python -m pip install ipaddr in command line
+Step 8: Download p0f API library https://pypi.python.org/pypi/p0f/1.0.0 or python -m pip install p0f in command line
 Step 9: Run nettest.py with root privaledges.
 

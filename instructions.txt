@@ -1,0 +1,24 @@
+N.B:File must be run on an Ubuntu operating system because of the location of libcap package, other distros
+threw errors as libcap was stored at different directories.
+
+Python 2.7.6 is needed
+python-pip recommended for installing libraries
+N.B a shell script was added that also installs all neccessary libraries and programs and moves p0f to appropriate folder i.e 
+performs Steps 1-8 for you if you rather use that.
+
+Instructions:
+Step 1: Download ipaddr library https://pypi.python.org/pypi/ipaddr or python -m pip install ipaddr in command line
+Step 2: Download p0f wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-latest.tgz
+Step 3: extract p0f to current directory tar xzf p0f-latest.tgz
+Step 4: Change directory into extracted folder cd p0f-3.09b
+Step 5: Install essential tools if not already installed sudo apt-get install build-essential libpcap-dev
+Step 6: Complile p0f using the following commands: make
+                                                   cd tools
+                                                   make
+                                                   cd ..
+Step 7: Move files to appropriate directories: cp p0f /usr/local/bin/
+                                               cp p0f.fp /etc/
+                                               cp tools/p0f-client /usr/local/bin/
+Step 8: Download p0f API library https://pypi.python.org/pypi/p0f/1.0.0 or python -m pip install ipaddr in command line
+Step 9: Run nettest.py with root privaledges.
+

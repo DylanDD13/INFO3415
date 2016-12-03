@@ -1,3 +1,22 @@
+Question 1: Ransomeware
+
+Files used: 
+Python 2.7.12 32-bit on Windows 10
+PyCrypto 2.6.1(For encryption and decryption functions)
+pypiwin32 (to get win32api for drive scanning, to propagate, known as pywin32 also)
+py2exe-0.6.9 {pip install http://sourceforge.net/projects/py2exe/files/latest/download?source=files} (To make EXE)
+Instructions:
+1. 	Disable Anti-Virus or any type of protection software
+2. 	Have normal user privileges on, no advanced user privileges to disable anything, especially writing to the registry and creating files.
+3.	Make a folder called "work" in the root directory (C: drive) and put any type of file and/or subdirectories within with files also (last part optional)
+4.	Have an external drive or flash drive connected to view the file propagation
+5.	Run the "RemoveSpyware2016" File and view that the contents of the "work" folder are encrypted, the encrypt file itself went hidden, the ransom note appears, the file 	has propogated onto other drives and the program has now been placed in the registry to run on startup.
+6.	Now run the "DecryptTheVirus" File and notice that the contents of the "work" folder are decrypted and back to the original state, as well as the startup encrypt file 	removed.
+
+
+
+
+
 Question 2: Networked Machine Detector
 N.B:File must be run on an Ubuntu operating system because of the location of libcap package, other distros
 threw errors as libcap was stored at different directories.

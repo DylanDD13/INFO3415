@@ -1,0 +1,44 @@
+Question 1: Ransomeware
+
+Files used: 
+Python 2.7.12 32-bit on Windows 10
+PyCrypto 2.6.1(For encryption and decryption functions)
+pypiwin32 (to get win32api for drive scanning, to propagate, known as pywin32 also)
+py2exe-0.6.9 {pip install http://sourceforge.net/projects/py2exe/files/latest/download?source=files} (To make EXE)
+Instructions:
+1. 	Disable Anti-Virus or any type of protection software
+2. 	Have normal user privileges on, no advanced user privileges to disable anything, especially writing to the registry and creating files.
+3.	Make a folder called "work" in the root directory (C: drive) and put any type of file and/or subdirectories within with files also (last part optional)
+4.	Have an external drive or flash drive connected to view the file propagation
+5.	Run the "RemoveSpyware2016" File and view that the contents of the "work" folder are encrypted, the encrypt file itself went hidden, the ransom note appears, the file 	has propogated onto other drives and the program has now been placed in the registry to run on startup.
+6.	Now run the "DecryptTheVirus" File and notice that the contents of the "work" folder are decrypted and back to the original state, as well as the startup encrypt file 	removed.
+
+
+
+
+
+Question 2: Networked Machine Detector
+N.B:File must be run on an Ubuntu operating system because of the location of libcap package, other distros
+threw errors as libcap was stored at different directories.
+
+Python 2.7.6 is needed
+python-pip recommended for installing libraries
+N.B a shell script was added that also installs all neccessary libraries and programs and moves p0f to appropriate folder i.e 
+performs Steps 1-8 for you if you rather use that.
+
+Instructions:
+Step 1: Download ipaddr library https://pypi.python.org/pypi/ipaddr or python -m pip install ipaddr in command line
+Step 2: Download p0f wget http://lcamtuf.coredump.cx/p0f3/releases/p0f-latest.tgz
+Step 3: extract p0f to current directory tar xzf p0f-latest.tgz
+Step 4: Change directory into extracted folder cd p0f-3.09b
+Step 5: Install essential tools if not already installed sudo apt-get install build-essential libpcap-dev
+Step 6: Complile p0f using the following commands: make
+                                                   cd tools
+                                                   make
+                                                   cd ..
+Step 7: Move files to appropriate directories: cp p0f /usr/local/bin/
+                                               cp p0f.fp /etc/
+                                               cp tools/p0f-client /usr/local/bin/
+Step 8: Download p0f API library https://pypi.python.org/pypi/p0f/1.0.0 or python -m pip install p0f in command line
+Step 9: Run nettest.py with root privileges.
+
